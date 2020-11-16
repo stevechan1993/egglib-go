@@ -40,14 +40,14 @@ func (serviceError *ServiceError) Error() string {
 	return serviceError.Message
 }
 
-func ThrowErrorMsg(attachMessages ...string) error {
+func ThrowError(attachMessages ...string) error {
 	return &ServiceError{
 			Code:    501 + baseCode*baseCodeMultiple,
 			Message: strings.Join(append([]string{""}, attachMessages...), ""),
 		}
 }
 
-func ThrowError(serviceErrorNo int, attachMessages ...string) error {
+func ThrowErrorMsg(serviceErrorNo int, attachMessages ...string) error {
 	switch serviceErrorNo {
 	case INTERNAL_SERVER_ERROR:
 		return &ServiceError{
