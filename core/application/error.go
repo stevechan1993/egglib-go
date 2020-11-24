@@ -29,6 +29,7 @@ const (
 	ARG_ERROR
 	RES_NO_FIND_ERROR
 	BUSINESS_ERROR
+	ERROR
 )
 
 type ServiceError struct {
@@ -40,14 +41,7 @@ func (serviceError *ServiceError) Error() string {
 	return serviceError.Message
 }
 
-func ThrowError(attachMessages ...string) error {
-	return &ServiceError{
-			Code:    501 + baseCode*baseCodeMultiple,
-			Message: strings.Join(append([]string{""}, attachMessages...), ""),
-		}
-}
-
-func ThrowErrorMsg(serviceErrorNo int, attachMessages ...string) error {
+func ThrowError(serviceErrorNo int, attachMessages ...string) error {
 	switch serviceErrorNo {
 	case INTERNAL_SERVER_ERROR:
 		return &ServiceError{
@@ -78,6 +72,11 @@ func ThrowErrorMsg(serviceErrorNo int, attachMessages ...string) error {
 		return &ServiceError{
 			Code:    506 + baseCode*baseCodeMultiple,
 			Message: strings.Join(append([]string{"业务逻辑错误："}, attachMessages...), ""),
+		}
+	case ERROR:
+		return &ServiceError{
+			Code:    500 + baseCode*baseCodeMultiple,
+			Message: strings.Join(append([]string{""}, attachMessages...), ""),
 		}
 	default:
 		return &ServiceError{
