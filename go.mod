@@ -1,4 +1,4 @@
-module github.com/linmadan/egglib-go
+module github.com/stevechan1993/egglib-go
 
 go 1.12
 
@@ -22,4 +22,4 @@ require (
 	mellium.im/sasl v0.2.1 // indirect
 )
 
-replace github.com/linmadan/egglib-go => ../egglib-go
+replace github.com/stevechan1993/egglib-go => ../egglib-go
