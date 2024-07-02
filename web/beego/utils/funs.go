@@ -2,7 +2,7 @@ package utils
 
 import (
 	"github.com/astaxie/beego/context"
-	"github.com/linmadan/egglib-go/core/application"
+	"github.com/stevechan1993/egglib-go/core/application"
 )
 
 type JsonResponse map[string]interface{}

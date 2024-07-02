@@ -2,9 +2,10 @@ package local_message
 
 import (
 	"fmt"
-	"github.com/linmadan/egglib-go/core/application"
-	"github.com/linmadan/egglib-go/message/publisher/local_message/beego"
-	beegoTransaction "github.com/linmadan/egglib-go/transaction/beego"
+
+	"github.com/stevechan1993/egglib-go/core/application"
+	"github.com/stevechan1993/egglib-go/message/publisher/local_message/beego"
+	beegoTransaction "github.com/stevechan1993/egglib-go/transaction/beego"
 )
 
 type Publisher struct {

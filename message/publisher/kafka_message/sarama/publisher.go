@@ -2,11 +2,12 @@ package sarama
 
 import (
 	"encoding/json"
-	"github.com/Shopify/sarama"
-	"github.com/linmadan/egglib-go/core/application"
-	"github.com/linmadan/egglib-go/log"
 	"strings"
 	"time"
+
+	"github.com/Shopify/sarama"
+	"github.com/stevechan1993/egglib-go/core/application"
+	"github.com/stevechan1993/egglib-go/log"
 )
 
 type Publisher struct {
